@@ -1,0 +1,85 @@
+.select-addr-btn{
+  height:25px;
+  width:42px;
+  text-align: left;
+  font-size:13px;
+  padding-left:1.1rem;
+  margin:0px;
+}
+
+button[size="mini"] {
+display:inline-block;
+line-height:1.5rem;
+font-size:13px;
+padding:0 0.4em;
+
+}
+.triangle-icon{
+  width:14px;
+height:14px;
+position:relative;
+z-index:99999;
+
+}
+.plate-number input{
+  font-size: 14px;
+  margin-left: 10px;
+}
+.engine-number{
+   font-size: 14px;
+}
+.search-btn{
+  margin: 35px 25px 0px 25px;
+  color:white;
+  background-color:#1C86EE;
+}
+button[type="primary"] {
+  color:#FFFFFF;
+  background-color:#1C86EE;
+}
+
+
+button[disabled][type="primary"] {
+  color:#FFFFFF;
+  background-color:#71b6fb;
+}
+
+.select_options{
+
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  text-align: center;
+  padding:15px;
+  background-color: #787878;
+  z-index: 999999;
+
+}
+.select_item{
+  position: relative;
+  float: left;
+  margin:10px;
+  border:1px solid #FFFFFF;
+  width:32px;
+  height:32px;
+  text-align: center;
+  color:#333;
+  background-color:#FFFFFF;
+  border-radius: 5px;
+  box-shadow:1px 1px 1px 1px #6B6B6B;
+  line-height: 33px;
+
+}
+
+.over{  
+  width: 100%;  
+  height: 100%;  
+  opacity:0.8;/*设置背景色透明度,1为完全不透明,IE需要使用filter:alpha(opacity=80);*/  
+  filter:alpha(opacity=80);  
+  /*display: none;  */
+  position:absolute;  
+  top:0;  
+  left:0;  
+  z-index:1;  
+  background: silver;  
+}

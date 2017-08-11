@@ -1,0 +1,36 @@
+    <view class="weui-cells__title">请添加需要查询的车辆</view>
+
+<view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">车牌号码</view>
+                </view>
+                <button class="weui-btn mini-btn select-addr-btn" bindtap="selectAddr" type="primary" size="mini">{{current_select}}
+                      <image class="triangle-icon"  src="../../../source/image/triangle.png"/>      
+                </button>
+                <view class="weui-cell__bd plate-number">
+                    <input class="weui-input" bindinput="plateNumberInput" placeholder="点击输入"/>
+                </view>
+            </view>
+  
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">发动机号</view>
+                </view>
+                <view class="weui-cell__bd engine-number">
+                    <input class="weui-input" bindinput="engineNumberInput" placeholder="请输入完整发动机号"/>
+                </view>
+            </view> 
+     
+        </view>
+
+          <button wx:if="{{plate_number_str==''||engine_number_str==''}}" disabled  class="weui-btn search-btn" type="primary" bindtap="search">点击查询</button>
+          <button wx:else   class="weui-btn search-btn" type="primary" bindtap="search">点击查询</button>
+
+
+    </view>
+    <view hidden="{{hidden}}" class="over" bindtap="cancelSelectAddr"></view>
+    <view hidden="{{hidden}}" class="select_options parent">
+      <view wx:for="{{select_option_item}}"  bindtap="selectAddrSuccess" data-item="{{itemName}}" wx:for-item="itemName" class="select_item column">{{itemName}}</view>
+    </view>
