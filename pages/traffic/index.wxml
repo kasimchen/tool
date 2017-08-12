@@ -1,26 +1,30 @@
 <!--index.wxml-->
 
     <view class="pannel-parent">
+
+      <view class="pannel" wx:for="{{list}}" wx:for-index="idx" wx:for-item="item">
       <view class="weui-panel bg-blue item">
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_text">
                     <view class="edit-button">编辑</view>
-                    <image class="into-button-icon" src="../../source/image/into.png"/>
-                      <view class="info">
-                        <view class="weui-media-box__title weui-media-box__title_in-text">京P93539</view>
-                        <view class="weui-media-box__desc">上次查询时间:5分钟前</view>
+                    <image class="into-button-icon" bindtap="detail" data-id="{{item.id}}" src="../../source/image/into.png"/>
+                      <view class="info" bindtap="detail" data-id="{{item.id}}">
+                        <view class="weui-media-box__title weui-media-box__title_in-text">{{item.plate_number}}</view>
+                        <view class="weui-media-box__desc">上次查询时间:{{item.updated_at}}</view>
                     </view>
                 </view>
             </view>
       </view>
-      <view class="weui-media-box__info">
-              <view class="weui-media-box__info__meta">违章:0</view>
-              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">罚款:0</view>
-              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">扣分:0</view>
+      <view class="weui-media-box__info" >
+              <view class="weui-media-box__info__meta">违章:{{item.extra.amount}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">罚款:{{item.extra.totalFine}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">扣分:{{item.extra.totalPoints}}</view>
       </view>
+      </view>
+
     </view>
 
-    <view class="pannel-parent add bg-add">
+    <view class="pannel-parent add bg-add" bindtap="add">
       <image class="icon" src="../../source/image/plus.png"/>      
       <view class="add-text">添加车辆</view>    
       <view class="add-info">极速查询,支持全国,违章代缴</view>    

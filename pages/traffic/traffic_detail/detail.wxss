@@ -1,0 +1,44 @@
+page{
+  background-color:#f8f8f8;
+}
+.list{
+  margin-top: 10px;
+}
+.title_info{
+  margin-top: 5px;
+}
+.title_info image{
+  width:16px;
+  height:16px;
+}
+.title_info .info{
+  float:left;
+  margin-right:10px;
+  font-size: 10px;
+  height: 20px;
+}
+.time{
+  font-size: 10px;
+  color:#BEBEBE;
+}
+.item{
+  margin:0px 10px 0px 10px;
+  border-bottom: 1px solid #BEBEBE;
+  padding-bottom: 25px;
+}
+.description{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.action{
+  font-size: 14px;
+}
+.text{
+  float: right;
+  margin-left: 2px;
+}
+.no-more{
+  text-align: center;
+  margin-top: 10px;
+  color: #BEBEBE;
+}

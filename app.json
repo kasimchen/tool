@@ -1,6 +1,8 @@
 {
   "pages":[
-    "pages/traffic/traffic_add/index",
+    "pages/traffic/index",
+    "pages/traffic/traffic_detail/detail",
+    "pages/traffic/traffic_add/index",        
     "pages/logs/logs"
   ],
   "window":{

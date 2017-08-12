@@ -1,14 +1,35 @@
 //app.js
+
+var userRepo = require('function/user.js')
+
 App({
   onLaunch: function () {
+
+
+/*
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userInfo']) {
+          console.log('success');
+          return false;
+        }
+      }
+    })*/
+
+
+
     var that = this
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};
-    if ((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600)) && (!userInfo.nickName)) {
+    
+    console.log('准备请求openid');
+    if ((!user.openid || (user.expires_in) < (Date.now() + 1000*60*2))) {
+
+      console.log('请求openid');
+
       wx.login({
         success: function (res) {
           if (res.code) {
-
             wx.getUserInfo({
               success: function (res) {
                 var objz = {};
@@ -34,7 +55,10 @@ App({
                 obj.openid =  res.data.openid;
                 obj.expires_in = Date.now() + res.data.expires_in;
                 wx.setStorageSync('user', obj);//存储openid  
-  
+
+                console.log('已获取openid');
+
+
               }
             });
           } else {
@@ -74,6 +98,7 @@ App({
 
       userInfo.openid = user.openid;
       that.globalData.userInfo = userInfo
+     
       typeof cb == "function" && cb(that.globalData.userInfo);
       
     }

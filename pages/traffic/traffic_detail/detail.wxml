@@ -1,0 +1,20 @@
+
+<block wx:if="{{detail.extra.untreated==0}}">
+<view class="no-more">没有违章记录</view>
+</block>
+<block  wx:else>
+
+<view class="list">
+  <view class="item" wx:for="{{detail.violations}}" wx:for-index="idx" wx:for-item="item">
+    <view class="time">{{item.time}}</view>
+    <view class="description">{{item.city}}{{item.address}}</view>
+    <view class="action">{{item.reason}}</view>
+    <view class="title_info">
+      <view class="info point"><image src="../../../source/image/point.png"></image><view class="text">{{item.point}}</view></view>
+      <view class="info fine"><image src="../../../source/image/fine.png"></image><view class="text">{{item.fine}}</view></view>
+      <view class="info status"><image src="../../../source/image/status.png"></image><view class="text">{{item.processStatus}}</view></view>
+    </view>
+  </view>
+</view>
+
+</block>

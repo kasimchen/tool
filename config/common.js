@@ -6,7 +6,7 @@ var licencePlate =
     "陕" ,"吉" , "闽" , "贵",  "川" , "青" ,"宁" , 
     "渝" , "藏" ,"琼" ];
 
-var apiHost = 'http://www.cms.com';
+var apiHost = 'http://www.yuzhai.top';
 module.exports = {
   licencePlate: licencePlate,
   apiHost: apiHost

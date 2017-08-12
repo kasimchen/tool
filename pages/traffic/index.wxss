@@ -57,7 +57,6 @@ top:45px;
 .pannel-parent{
   margin:10px;
   border-radius: 5px;
-  box-shadow:1px 2px 6px 1px #cdcccc;
 
 }
 .info .weui-media-box__desc{
@@ -91,4 +90,17 @@ top:45px;
   color:#BEBEBE	;
   font-size: 10px;
   padding-bottom: 10px;
+}
+.weui-panel {
+margin-top:0px !important;
+position:relative;
+overflow:hidden;
+}
+.pannel{
+margin-bottom:10px;
+box-shadow:1px 1px 2px 1px #cdcccc;
+border-radius:8px;
+overflow:hidden;
+
+
 }
