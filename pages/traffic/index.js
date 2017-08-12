@@ -28,19 +28,29 @@ Page({
     wx.getSetting({
       success(res) {
         if (!res.authSetting['scope.userInfo']) {
+          console.log("未授权");
           return false;
         }else{
-          userRepo.login(function(){
+          
+          setTimeout(function(){
 
-            trafficRepo.indexTraffic(function (ret) {
-              if (ret.data.code == 200) {
-                that.setData({
-                  list: ret.data.data
-                })
-              }
-            })
+            userRepo.login(function () {
 
-          });
+              trafficRepo.indexTraffic(function (ret) {
+                console.log("获取列表页数据");
+
+                if (ret.data.code == 200) {
+                  that.setData({
+                    list: ret.data.data
+                  })
+                }
+              })
+
+            });
+
+
+          },500);
+
         }
       }
     });

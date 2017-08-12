@@ -9,6 +9,7 @@ var app = getApp();
 function login(callback){
 
   var userInfo = getUserInfo();
+  console.log("进入登录下面打印用户数据");
   console.log(userInfo);
   if (userInfo.expire_at > Date.now() || !userInfo.openid){
     return false;
@@ -24,7 +25,9 @@ function login(callback){
       success: function(res) {
           if(res.data.code==200){
             setToken(res.data.data.token, res.data.data.expire_at);
-            callback();
+            if (typeof callback === "function") {
+              callback();
+            }
           }else{
             toastRepo.toastError('登录失败');
           }
