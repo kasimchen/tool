@@ -5,7 +5,7 @@
 <block  wx:else>
 
 <view class="list">
-  <view class="item" wx:for="{{detail.violations}}" wx:for-index="idx" wx:for-item="item">
+  <view class="item" wx:for="{{detail.extra.violations}}" wx:for-index="idx" wx:for-item="item">
     <view class="time">{{item.time}}</view>
     <view class="description">{{item.city}}{{item.address}}</view>
     <view class="action">{{item.reason}}</view>
